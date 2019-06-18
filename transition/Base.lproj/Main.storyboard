@@ -55,7 +55,7 @@
         <!--Detail View Controller-->
         <scene sceneID="E7g-oc-Nv3">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="lbQ-xa-dpW" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" modalPresentationStyle="overCurrentContext" id="lbQ-xa-dpW" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="604-n2-Vob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,12 +66,32 @@
                                     <constraint firstAttribute="height" constant="500" id="1sD-GQ-cwc"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtY-ta-luz">
+                                <rect key="frame" x="0.0" y="544" width="414" height="352"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ2-Rg-2fF">
+                                        <rect key="frame" x="355" y="20" width="39" height="30"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AZ2-Rg-2fF" secondAttribute="trailing" constant="20" id="Bdo-Os-WVB"/>
+                                    <constraint firstItem="AZ2-Rg-2fF" firstAttribute="top" secondItem="UtY-ta-luz" secondAttribute="top" constant="20" id="zgb-BO-Gla"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H5k-0t-Gwh" firstAttribute="leading" secondItem="cjO-l2-QtQ" secondAttribute="leading" id="9pY-OF-Bur"/>
+                            <constraint firstItem="UtY-ta-luz" firstAttribute="leading" secondItem="cjO-l2-QtQ" secondAttribute="leading" id="Ikd-AZ-Wwn"/>
                             <constraint firstItem="H5k-0t-Gwh" firstAttribute="trailing" secondItem="cjO-l2-QtQ" secondAttribute="trailing" id="KdT-ol-6Vu"/>
+                            <constraint firstItem="UtY-ta-luz" firstAttribute="trailing" secondItem="cjO-l2-QtQ" secondAttribute="trailing" id="Ujh-8V-Ge4"/>
+                            <constraint firstItem="UtY-ta-luz" firstAttribute="top" secondItem="cjO-l2-QtQ" secondAttribute="top" constant="500" id="Vs7-O1-inp"/>
                             <constraint firstItem="H5k-0t-Gwh" firstAttribute="top" secondItem="cjO-l2-QtQ" secondAttribute="top" id="dXe-Fc-evK"/>
+                            <constraint firstAttribute="bottom" secondItem="UtY-ta-luz" secondAttribute="bottom" id="iDo-lw-zjC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjO-l2-QtQ"/>
                     </view>

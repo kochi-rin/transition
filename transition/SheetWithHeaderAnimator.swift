@@ -27,24 +27,17 @@ class SheetWithHeaderAnimator: NSObject {
 
         containerView.insertSubview(to.view, belowSubview: from.view)
 
-//        UIView.animate(withDuration: transitionDuration(using: transitionContext),
-//                       delay: 0,
-//                       options: UIView.AnimationOptions.init(rawValue: 0),
-//                       animations: {
-//                        from.view.alpha = 0.0
-//        },
-//                       completion: { _ in
-//                        from.view.alpha = 1.0
-//                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-//        })
+        // TODO : add screen shot which from is master
 
-        let options: UIView.AnimationOptions = (navigationOperation == UINavigationController.Operation.pop) ? [.transitionFlipFromLeft] : [.transitionFlipFromRight]
-        UIView.transition(from: from.view,
-                          to: to.view,
-                          duration: transitionDuration(using: transitionContext),
-                          options: options,
-                          completion: { _ in
-                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        UIView.animate(withDuration: transitionDuration(using: transitionContext),
+                       delay: 0,
+                       options: UIView.AnimationOptions.init(rawValue: 0),
+                       animations: {
+                        from.view.alpha = 0.0
+        },
+                       completion: { _ in
+                        from.view.alpha = 1.0
+                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
     }
 }
