@@ -22,14 +22,8 @@ class DetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         imageView.image = image
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
     }
-    
 
     /*
     // MARK: - Navigation

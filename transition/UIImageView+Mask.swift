@@ -18,18 +18,22 @@ extension UIImageView {
             return
         }
 
-        // create blurred image with overlay
-        let maskedImage = image.blurredImage()?.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius)
-        let maskedImageView = UIImageView(image: maskedImage)
-        maskedImageView.contentMode = contentMode
-        maskedImageView.translatesAutoresizingMaskIntoConstraints = false
+        DispatchQueue.global(qos: .userInteractive).async {
+            let maskedImage = image.blurredImage()?.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius)
 
-        addSubview(maskedImageView)
+            DispatchQueue.main.async {
+                let maskedImageView = UIImageView(image: maskedImage)
+                maskedImageView.contentMode = self.contentMode
+                maskedImageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let views = ["maskedImageView" : maskedImageView]
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[maskedImageView]|", options: [], metrics: nil, views: views)
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[maskedImageView]|", options: [], metrics: nil, views: views)
+                self.addSubview(maskedImageView)
 
-        addConstraints(horizontalConstraints + verticalConstraints)
+                let views = ["maskedImageView" : maskedImageView]
+                let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[maskedImageView]|", options: [], metrics: nil, views: views)
+                let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[maskedImageView]|", options: [], metrics: nil, views: views)
+
+                self.addConstraints(horizontalConstraints + verticalConstraints)
+            }
+        }
     }
 }
