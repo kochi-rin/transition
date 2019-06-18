@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3465EF22B8D49B00923638 /* UIView+Extension.swift */; };
 		1C66401E22B8840800880AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66401D22B8840800880AD6 /* AppDelegate.swift */; };
 		1C66402322B8840800880AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402122B8840800880AD6 /* Main.storyboard */; };
 		1C66402522B8840900880AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402422B8840900880AD6 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3465EF22B8D49B00923638 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1C66401A22B8840800880AD6 /* transition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = transition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C66401D22B8840800880AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C66402222B8840800880AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				1C66403722B897FC00880AD6 /* UIImage+Mask.swift */,
 				1C66403822B897FC00880AD6 /* UIImageView+Mask.swift */,
 				1C66403B22B8981400880AD6 /* origin.png */,
+				1C3465EF22B8D49B00923638 /* UIView+Extension.swift */,
 			);
 			path = transition;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				1C66403222B88B1000880AD6 /* MasterViewController.swift in Sources */,
 				1C66403422B88B2100880AD6 /* DetailViewController.swift in Sources */,
+				1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */,
 				1C66403A22B897FC00880AD6 /* UIImageView+Mask.swift in Sources */,
 				1C66403622B8908700880AD6 /* NavigationController.swift in Sources */,
 				1C66403022B8877C00880AD6 /* SheetWithHeaderAnimator.swift in Sources */,
