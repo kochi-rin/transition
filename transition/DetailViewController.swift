@@ -41,4 +41,7 @@ class DetailViewController: UIViewController {
     }
     */
 
+    @IBAction func tappedClose(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
