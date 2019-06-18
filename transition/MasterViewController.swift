@@ -10,6 +10,8 @@ import UIKit
 
 class MasterViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,4 +31,9 @@ class MasterViewController: UIViewController {
     }
     */
 
+    @IBAction func tappedSearch(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.image = imageView.image
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

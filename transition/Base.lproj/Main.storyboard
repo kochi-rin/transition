@@ -18,22 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="origin.png" translatesAutoresizingMaskIntoConstraints="NO" id="VQX-fw-Tvl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="pc0-EA-wpF"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6B-sP-KJp">
-                                <rect key="frame" x="192" y="460" width="30" height="30"/>
+                                <rect key="frame" x="20" y="64" width="30" height="30"/>
                                 <state key="normal" title="GO"/>
                                 <connections>
-                                    <segue destination="lbQ-xa-dpW" kind="show" id="oPP-cc-VSZ"/>
+                                    <action selector="tappedSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jvg-HF-htZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="t6B-sP-KJp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bEk-xB-zZU"/>
-                            <constraint firstItem="t6B-sP-KJp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wEn-fU-ZnP"/>
+                            <constraint firstItem="VQX-fw-Tvl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mcq-FO-EdL"/>
+                            <constraint firstItem="VQX-fw-Tvl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qvw-aW-YaZ"/>
+                            <constraint firstItem="VQX-fw-Tvl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mJS-nd-qNR"/>
+                            <constraint firstItem="t6B-sP-KJp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qYj-hN-OdC"/>
+                            <constraint firstItem="t6B-sP-KJp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sPS-ZV-kpP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="D6m-fB-eOU"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="VQX-fw-Tvl" id="r5c-40-EN4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,17 +55,33 @@
         <!--Detail View Controller-->
         <scene sceneID="E7g-oc-Nv3">
             <objects>
-                <viewController id="lbQ-xa-dpW" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="lbQ-xa-dpW" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="604-n2-Vob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-0t-Gwh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="1sD-GQ-cwc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="H5k-0t-Gwh" firstAttribute="leading" secondItem="cjO-l2-QtQ" secondAttribute="leading" id="9pY-OF-Bur"/>
+                            <constraint firstItem="H5k-0t-Gwh" firstAttribute="trailing" secondItem="cjO-l2-QtQ" secondAttribute="trailing" id="KdT-ol-6Vu"/>
+                            <constraint firstItem="H5k-0t-Gwh" firstAttribute="top" secondItem="cjO-l2-QtQ" secondAttribute="top" id="dXe-Fc-evK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cjO-l2-QtQ"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="H5k-0t-Gwh" id="TbZ-Fl-IM0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxh-3Q-b6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="139"/>
+            <point key="canvasLocation" x="1915.9420289855075" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="91J-7Y-8fg">
@@ -73,4 +102,7 @@
             <point key="canvasLocation" x="191" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="origin.png" width="249.60000610351562" height="300"/>
+    </resources>
 </document>

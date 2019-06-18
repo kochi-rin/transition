@@ -10,12 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var image: UIImage?
+
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        imageView.image = image
+        imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
     }
     
 
