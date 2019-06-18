@@ -27,11 +27,6 @@ class SheetWithHeaderAnimator: NSObject {
 
         containerView.insertSubview(to.view, belowSubview: from.view)
 
-        // add screen shot which from is master
-        if navigationOperation == UINavigationController.Operation.push {
-            to.view.insertSubview(UIImageView(image: from.view.capture()), at: 0)
-        }
-
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
                        delay: 0,
                        options: UIView.AnimationOptions.init(rawValue: 0),

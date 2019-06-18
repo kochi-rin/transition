@@ -40,6 +40,12 @@ class NavigationController: UINavigationController {
 extension NavigationController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if isTargetViewControllerPair(from: fromVC, to: toVC) {
+
+            // insert capture of fromVC's view to toVC to pretense over current context
+            if operation == UINavigationController.Operation.push {
+                toVC.view.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
+            }
+
             return SheetWithHeaderAnimator(operation)
         }
 
