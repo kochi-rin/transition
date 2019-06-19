@@ -24,29 +24,46 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
     }
 
     private func customAnimation(_ transitionContext: UIViewControllerContextTransitioning) {
-        guard let from = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), let to = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
+        guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
             return
         }
 
         let containerView = transitionContext.containerView
 
-        containerView.insertSubview(to.view, belowSubview: from.view)
+        containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
 
-        // insert capture of fromVC's view to toVC to pretense over current context
-        if navigationOperation == UINavigationController.Operation.push {
-            to.view.insertSubview(UIImageView(image: from.view.capture()), at: 0)
+        switch navigationOperation {
+        case .none:
+            break
+        case .push:
+            if let animator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let backgroundView = animator.animateBackgroundView,
+                let contentView = animator.animateContentView {
+                // insert capture of fromVC's view to toVC to pretense over current context
+                if navigationOperation == UINavigationController.Operation.push {
+                    backgroundView.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
+                }
+
+                contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
+
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                    contentView.transform = .identity
+                }, completion: { _ in
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                })
+            }
+        case .pop:
+            if let animator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let contentView = animator.animateContentView {
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                    contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
+                }, completion: { _ in
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                })
+            }
+        @unknown default:
+            break
         }
-
-        UIView.animate(withDuration: transitionDuration(using: transitionContext),
-                       delay: 0,
-                       options: UIView.AnimationOptions.init(rawValue: 0),
-                       animations: {
-                        from.view.alpha = 0.0
-        },
-                       completion: { _ in
-                        from.view.alpha = 1.0
-                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        })
     }
 }
 
