@@ -40,7 +40,7 @@ class NavigationController: UINavigationController {
 extension NavigationController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if isTargetViewControllerPair(from: fromVC, to: toVC) {
-            return SimilarGoodsSheetAnimator(operation)
+            return CoverVerticalWithFadeAnimatorByPush(operation)
         }
 
         return nil

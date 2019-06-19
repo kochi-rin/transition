@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimilarGoodsSheetAnimator: NSObject {
+class CoverVerticalWithFadeAnimatorByPush: NSObject {
     let kAnimationDuration: TimeInterval = 0.5
 
     var navigationOperation: UINavigationController.Operation = .none
@@ -45,7 +45,7 @@ class SimilarGoodsSheetAnimator: NSObject {
     }
 }
 
-extension SimilarGoodsSheetAnimator: UIViewControllerAnimatedTransitioning {
+extension CoverVerticalWithFadeAnimatorByPush: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return kAnimationDuration
     }
