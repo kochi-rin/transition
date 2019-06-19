@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CoverVerticalWithFadeByPushAnimatorProtocol: NSObjectProtocol {
+    var animateBackgroundView: UIView? { get }
+    var animateContentView: UIView? { get }
+}
+
 class CoverVerticalWithFadeByPushAnimator: NSObject {
     let kAnimationDuration: TimeInterval = 0.5
 
