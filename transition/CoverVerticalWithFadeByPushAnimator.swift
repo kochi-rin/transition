@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoverVerticalWithFadeAnimatorByPush: NSObject {
+class CoverVerticalWithFadeByPushAnimator: NSObject {
     let kAnimationDuration: TimeInterval = 0.5
 
     var navigationOperation: UINavigationController.Operation = .none
@@ -45,7 +45,7 @@ class CoverVerticalWithFadeAnimatorByPush: NSObject {
     }
 }
 
-extension CoverVerticalWithFadeAnimatorByPush: UIViewControllerAnimatedTransitioning {
+extension CoverVerticalWithFadeByPushAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return kAnimationDuration
     }

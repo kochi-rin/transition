@@ -12,7 +12,7 @@
 		1C66402322B8840800880AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402122B8840800880AD6 /* Main.storyboard */; };
 		1C66402522B8840900880AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402422B8840900880AD6 /* Assets.xcassets */; };
 		1C66402822B8840900880AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402622B8840900880AD6 /* LaunchScreen.storyboard */; };
-		1C66403022B8877C00880AD6 /* CoverVerticalWithFadeAnimatorByPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeAnimatorByPush.swift */; };
+		1C66403022B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift */; };
 		1C66403222B88B1000880AD6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66403122B88B1000880AD6 /* MasterViewController.swift */; };
 		1C66403422B88B2100880AD6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66403322B88B2100880AD6 /* DetailViewController.swift */; };
 		1C66403622B8908700880AD6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66403522B8908700880AD6 /* NavigationController.swift */; };
@@ -29,7 +29,7 @@
 		1C66402422B8840900880AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C66402722B8840900880AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C66402922B8840900880AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeAnimatorByPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverVerticalWithFadeAnimatorByPush.swift; sourceTree = "<group>"; };
+		1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverVerticalWithFadeByPushAnimator.swift; sourceTree = "<group>"; };
 		1C66403122B88B1000880AD6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		1C66403322B88B2100880AD6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1C66403522B8908700880AD6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				1C66402422B8840900880AD6 /* Assets.xcassets */,
 				1C66402622B8840900880AD6 /* LaunchScreen.storyboard */,
 				1C66402922B8840900880AD6 /* Info.plist */,
-				1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeAnimatorByPush.swift */,
+				1C66402F22B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift */,
 				1C66403722B897FC00880AD6 /* UIImage+Mask.swift */,
 				1C66403822B897FC00880AD6 /* UIImageView+Mask.swift */,
 				1C66403B22B8981400880AD6 /* origin.png */,
@@ -162,7 +162,7 @@
 				1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */,
 				1C66403A22B897FC00880AD6 /* UIImageView+Mask.swift in Sources */,
 				1C66403622B8908700880AD6 /* NavigationController.swift in Sources */,
-				1C66403022B8877C00880AD6 /* CoverVerticalWithFadeAnimatorByPush.swift in Sources */,
+				1C66403022B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift in Sources */,
 				1C66401E22B8840800880AD6 /* AppDelegate.swift in Sources */,
 				1C66403922B897FC00880AD6 /* UIImage+Mask.swift in Sources */,
 			);
