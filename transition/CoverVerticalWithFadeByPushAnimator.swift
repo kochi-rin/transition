@@ -45,12 +45,11 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
                 }
 
                 contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
                 UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
                     contentView.transform = .identity
-                }, completion: { _ in
-                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                })
+                }, completion: nil)
             }
         case .pop:
             if let animator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
