@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SheetWithHeaderAnimator: NSObject {
+class SimilarGoodsSheetAnimator: NSObject {
     let kAnimationDuration: TimeInterval = 0.5
 
     var navigationOperation: UINavigationController.Operation = .none
@@ -27,6 +27,11 @@ class SheetWithHeaderAnimator: NSObject {
 
         containerView.insertSubview(to.view, belowSubview: from.view)
 
+        // insert capture of fromVC's view to toVC to pretense over current context
+        if navigationOperation == UINavigationController.Operation.push {
+            to.view.insertSubview(UIImageView(image: from.view.capture()), at: 0)
+        }
+
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
                        delay: 0,
                        options: UIView.AnimationOptions.init(rawValue: 0),
@@ -40,7 +45,7 @@ class SheetWithHeaderAnimator: NSObject {
     }
 }
 
-extension SheetWithHeaderAnimator: UIViewControllerAnimatedTransitioning {
+extension SimilarGoodsSheetAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return kAnimationDuration
     }
