@@ -99,6 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="cjO-l2-QtQ"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="UtY-ta-luz" id="PEw-4R-HYy"/>
                         <outlet property="imageView" destination="H5k-0t-Gwh" id="TbZ-Fl-IM0"/>
                     </connections>
                 </viewController>

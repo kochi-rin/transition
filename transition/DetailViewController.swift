@@ -13,7 +13,8 @@ class DetailViewController: UIViewController {
     var image: UIImage?
 
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var contentView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,5 +38,15 @@ class DetailViewController: UIViewController {
 
     @IBAction func tappedClose(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
+    var animateBackgroundView: UIView? {
+        return view
+    }
+
+    var animateContentView: UIView? {
+        return contentView
     }
 }
