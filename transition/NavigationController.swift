@@ -17,30 +17,12 @@ class NavigationController: UINavigationController {
 
         delegate = self
     }
-
-    // Push: From -> To / Pop: From <- To それぞれのペアを定義する
-    private var classPairs: [(from: AnyClass, to: AnyClass)] {
-        return [
-            (from: MasterViewController.self, to: DetailViewController.self),
-            (from: DetailViewController.self, to: MasterViewController.self),
-        ]
-    }
-
-    private func isTargetViewControllerPair(from: UIViewController, to: UIViewController) -> Bool {
-        for pair in classPairs {
-            if from.classForCoder == pair.from && to.classForCoder == pair.to {
-                return true
-            }
-        }
-
-        return false
-    }
 }
 
 extension NavigationController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if isTargetViewControllerPair(from: fromVC, to: toVC) {
-            return CoverVerticalWithFadeByPushAnimator(operation)
+        if let animator = CoverVerticalWithFadeByPushAnimator(operation, fromVC: fromVC, toVC: toVC) {
+            return animator
         }
 
         return nil

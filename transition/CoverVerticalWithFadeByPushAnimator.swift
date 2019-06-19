@@ -18,9 +18,15 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
 
     var navigationOperation: UINavigationController.Operation = .none
 
-    convenience init(_ navigationOperation: UINavigationController.Operation) {
+    convenience init?(_ navigationOperation: UINavigationController.Operation, fromVC: UIViewController, toVC: UIViewController) {
         self.init()
         self.navigationOperation = navigationOperation
+
+        if !(navigationOperation == .push && toVC is CoverVerticalWithFadeByPushAnimatorProtocol)
+            && !(navigationOperation == .pop && fromVC is CoverVerticalWithFadeByPushAnimatorProtocol) {
+
+            return nil
+        }
     }
 
     private func customAnimation(_ transitionContext: UIViewControllerContextTransitioning) {
@@ -40,9 +46,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
                 let backgroundView = animator.animateBackgroundView,
                 let contentView = animator.animateContentView {
                 // insert capture of fromVC's view to toVC to pretense over current context
-                if navigationOperation == UINavigationController.Operation.push {
-                    backgroundView.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
-                }
+                backgroundView.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
 
                 contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
