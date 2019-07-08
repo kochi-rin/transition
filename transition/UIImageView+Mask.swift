@@ -19,7 +19,7 @@ extension UIImageView {
         }
 
         DispatchQueue.global(qos: .userInteractive).async {
-            let maskedImage = image.blurredImage()?.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius)
+            let maskedImage = image.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius)
 
             DispatchQueue.main.async {
                 let maskedImageView = UIImageView(image: maskedImage)
