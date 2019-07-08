@@ -34,5 +34,10 @@ class SampleHeaderView: UIView {
         }
     }
 
+    typealias DidTapButton = (UIButton) -> Void
+    var didTouchUpInside: DidTapButton?
 
+    @IBAction func tappedClose(_ sender: Any) {
+        didTouchUpInside?(sender as! UIButton)
+    }
 }

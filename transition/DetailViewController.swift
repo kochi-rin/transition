@@ -26,13 +26,13 @@ class DetailViewController: UIViewController {
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
 
         tableView.addSubview(imageView)
-        tableView.contentInset.top = 500 - UIApplication.shared.statusBarFrame.height
-        tableView.contentInset.bottom = UIApplication.shared.statusBarFrame.height
+        tableView.contentInset.top = 500
+//        tableView.contentInset.bottom = UIApplication.shared.statusBarFrame.height + view.safeAreaInsets.bottom
     }
 
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     func tappedClose(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -52,15 +52,19 @@ extension DetailViewController: UITableViewDataSource {
     }
 }
 
-//extension DetailViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 50
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        return SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: tableView.frame.size.width, height: 50)))
-//    }
-//}
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 200, height: 50)))
+        view.didTouchUpInside = { button in
+            self.tappedClose(button)
+        }
+        return view
+    }
+}
 
 extension DetailViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
     var animateView: UIView? {
