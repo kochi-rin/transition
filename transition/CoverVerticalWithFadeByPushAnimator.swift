@@ -52,7 +52,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
         case .none:
             break
         case .push:
-            if  let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+            if let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let fromPosition = fromAnimator.originViewPosition,
                 let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let toView = toAnimator.animateView {
@@ -66,7 +66,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         case .pop:
-            if  let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+            if let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let fromView = fromAnimator.animateView,
                 let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let toPosition = toAnimator.originViewPosition {

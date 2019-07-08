@@ -21,7 +21,9 @@ class NavigationController: UINavigationController {
 
 extension NavigationController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if let animator = CoverVerticalWithFadeByPushAnimator(operation, fromVC: fromVC, toVC: toVC) {
+        if let _ = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+            let _ = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+            let animator = CoverVerticalWithFadeByPushAnimator(operation, fromVC: fromVC, toVC: toVC) {
             return animator
         }
 
