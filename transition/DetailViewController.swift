@@ -27,6 +27,7 @@ class DetailViewController: UIViewController {
 
         tableView.addSubview(imageView)
         tableView.contentInset.top = 500 - UIApplication.shared.statusBarFrame.height
+        tableView.contentInset.bottom = UIApplication.shared.statusBarFrame.height
     }
 
 //    override var prefersStatusBarHidden: Bool {
@@ -37,6 +38,29 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SampleCell", for: indexPath)
+        cell.textLabel?.text = "Item\(indexPath.row)"
+
+        return cell
+    }
+}
+
+//extension DetailViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 50
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: tableView.frame.size.width, height: 50)))
+//    }
+//}
 
 extension DetailViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
     var animateView: UIView? {

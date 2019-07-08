@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C247C9922D319160096EDA3 /* SampleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C247C9822D319150096EDA3 /* SampleHeaderView.swift */; };
+		1C247C9B22D319270096EDA3 /* SampleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C247C9A22D319270096EDA3 /* SampleHeaderView.xib */; };
 		1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3465EF22B8D49B00923638 /* UIView+Extension.swift */; };
 		1C66401E22B8840800880AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66401D22B8840800880AD6 /* AppDelegate.swift */; };
 		1C66402322B8840800880AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C66402122B8840800880AD6 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C247C9822D319150096EDA3 /* SampleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHeaderView.swift; sourceTree = "<group>"; };
+		1C247C9A22D319270096EDA3 /* SampleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleHeaderView.xib; sourceTree = "<group>"; };
 		1C3465EF22B8D49B00923638 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1C66401A22B8840800880AD6 /* transition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = transition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C66401D22B8840800880AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				1C66403522B8908700880AD6 /* NavigationController.swift */,
 				1C66403122B88B1000880AD6 /* MasterViewController.swift */,
 				1C66403322B88B2100880AD6 /* DetailViewController.swift */,
+				1C247C9822D319150096EDA3 /* SampleHeaderView.swift */,
+				1C247C9A22D319270096EDA3 /* SampleHeaderView.xib */,
 				1C66402122B8840800880AD6 /* Main.storyboard */,
 				1C66402422B8840900880AD6 /* Assets.xcassets */,
 				1C66402622B8840900880AD6 /* LaunchScreen.storyboard */,
@@ -146,6 +152,7 @@
 				1C66402822B8840900880AD6 /* LaunchScreen.storyboard in Resources */,
 				1C66403C22B8981500880AD6 /* origin.png in Resources */,
 				1C66402522B8840900880AD6 /* Assets.xcassets in Resources */,
+				1C247C9B22D319270096EDA3 /* SampleHeaderView.xib in Resources */,
 				1C66402322B8840800880AD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				1C66403222B88B1000880AD6 /* MasterViewController.swift in Sources */,
 				1C66403422B88B2100880AD6 /* DetailViewController.swift in Sources */,
 				1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */,
+				1C247C9922D319160096EDA3 /* SampleHeaderView.swift in Sources */,
 				1C66403A22B897FC00880AD6 /* UIImageView+Mask.swift in Sources */,
 				1C66403622B8908700880AD6 /* NavigationController.swift in Sources */,
 				1C66403022B8877C00880AD6 /* CoverVerticalWithFadeByPushAnimator.swift in Sources */,
