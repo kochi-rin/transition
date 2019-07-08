@@ -56,7 +56,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
                 let fromPosition = fromAnimator.originViewPosition,
                 let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let toView = toAnimator.animateView {
-                toView.transform = CGAffineTransform(translationX: 0, y: fromPosition.y + UIApplication.shared.statusBarFrame.height)
+                toView.transform = CGAffineTransform(translationX: 0, y: fromPosition.y)
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
                 UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
@@ -71,7 +71,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
                 let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let toPosition = toAnimator.originViewPosition {
                 UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-                    fromView.transform = CGAffineTransform(translationX: 0, y: toPosition.y + UIApplication.shared.statusBarFrame.height)
+                    fromView.transform = CGAffineTransform(translationX: 0, y: toPosition.y)
                 }, completion: { _ in
                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
                 })

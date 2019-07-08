@@ -11,7 +11,8 @@ import UIKit
 class MasterViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +41,7 @@ class MasterViewController: UIViewController {
 
 extension MasterViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
     var originViewPosition: CGPoint? {
-        return imageView.frame.origin
+        // TODO: get the origin of self.view
+        return imageView.convert(imageView.frame, to: view).origin
     }
 }

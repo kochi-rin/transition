@@ -31,7 +31,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-Aw-ZyC">
-                                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                                <rect key="frame" x="20" y="450" width="30" height="30"/>
                                                 <state key="normal" title="GO"/>
                                                 <connections>
                                                     <action selector="tappedSearch:" destination="GgI-86-usa" eventType="touchUpInside" id="W29-5H-ape"/>
@@ -40,12 +40,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="QSU-Aw-ZyC" secondAttribute="bottom" constant="20" id="0Rf-oE-NNh"/>
                                             <constraint firstItem="YGb-Cf-4P2" firstAttribute="leading" secondItem="GtI-oW-RYK" secondAttribute="leading" id="9TX-6W-D2Y"/>
                                             <constraint firstAttribute="height" constant="500" id="NWP-LP-6Gq"/>
                                             <constraint firstItem="QSU-Aw-ZyC" firstAttribute="leading" secondItem="GtI-oW-RYK" secondAttribute="leading" constant="20" id="Nkk-4s-zjX"/>
                                             <constraint firstAttribute="bottom" secondItem="YGb-Cf-4P2" secondAttribute="bottom" id="PFR-mH-iv0"/>
                                             <constraint firstAttribute="trailing" secondItem="YGb-Cf-4P2" secondAttribute="trailing" id="QMS-rV-kyY"/>
-                                            <constraint firstItem="QSU-Aw-ZyC" firstAttribute="top" secondItem="GtI-oW-RYK" secondAttribute="top" constant="20" id="ZNm-Uo-qQx"/>
                                             <constraint firstItem="YGb-Cf-4P2" firstAttribute="top" secondItem="GtI-oW-RYK" secondAttribute="top" id="jYU-Jn-htb"/>
                                         </constraints>
                                     </view>
@@ -84,6 +84,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="imageView" destination="YGb-Cf-4P2" id="hW1-xs-nUp"/>
+                        <outlet property="scrollView" destination="9ct-e1-1mS" id="AN7-Pt-KjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEf-qK-CtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
