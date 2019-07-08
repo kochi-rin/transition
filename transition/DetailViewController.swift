@@ -39,11 +39,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
-    var animateBackgroundView: UIView? {
-        return view
-    }
-
     var animateView: UIView? {
-        return tableView
+        return imageView
     }
 }

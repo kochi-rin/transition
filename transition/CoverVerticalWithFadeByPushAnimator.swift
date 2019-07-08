@@ -9,8 +9,18 @@
 import UIKit
 
 protocol CoverVerticalWithFadeByPushAnimatorProtocol: NSObjectProtocol {
-    var animateBackgroundView: UIView? { get }
     var animateView: UIView? { get }
+    var originViewPosition: CGPoint? { get }
+}
+
+extension CoverVerticalWithFadeByPushAnimatorProtocol {
+    var animateView: UIView? {
+        get { return nil }
+    }
+
+    var originViewPosition: CGPoint? {
+        get { return nil }
+    }
 }
 
 class CoverVerticalWithFadeByPushAnimator: NSObject {
@@ -42,26 +52,30 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
         case .none:
             break
         case .push:
-            if let animator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
-                let contentView = animator.animateView {
-//                contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
-//                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-//
-//                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-//                    contentView.transform = .identity
-//                }, completion: nil)
+            if  let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let fromPosition = fromAnimator.originViewPosition,
+                let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let toView = toAnimator.animateView {
+                toView.transform = CGAffineTransform(translationX: 0, y: fromPosition.y + UIApplication.shared.statusBarFrame.height)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                    toView.transform = .identity
+                }, completion: nil)
+            } else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         case .pop:
-            if let animator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
-                let contentView = animator.animateView {
-//                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-//                    contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
-//                }, completion: { _ in
-//                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-//                })
-
+            if  let fromAnimator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let fromView = fromAnimator.animateView,
+                let toAnimator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
+                let toPosition = toAnimator.originViewPosition {
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+                    fromView.transform = CGAffineTransform(translationX: 0, y: toPosition.y + UIApplication.shared.statusBarFrame.height)
+                }, completion: { _ in
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                })
+            } else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         @unknown default:

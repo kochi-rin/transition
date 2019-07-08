@@ -37,3 +37,9 @@ class MasterViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension MasterViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
+    var originViewPosition: CGPoint? {
+        return imageView.frame.origin
+    }
+}
