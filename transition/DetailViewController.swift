@@ -26,18 +26,12 @@ class DetailViewController: UIViewController {
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
 
         tableView.addSubview(imageView)
-        tableView.contentInset.top = 500
+        tableView.contentInset.top = 500 - UIApplication.shared.statusBarFrame.height
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
 
     func tappedClose(_ sender: Any) {
         navigationController?.popViewController(animated: true)
