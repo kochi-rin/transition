@@ -43,26 +43,26 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
             break
         case .push:
             if let animator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
-                let backgroundView = animator.animateBackgroundView,
                 let contentView = animator.animateView {
-                // insert capture of fromVC's view to toVC to pretense over current context
-                backgroundView.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
+//                contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
+//                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+//
+//                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+//                    contentView.transform = .identity
+//                }, completion: nil)
 
-                contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-
-                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-                    contentView.transform = .identity
-                }, completion: nil)
             }
         case .pop:
             if let animator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let contentView = animator.animateView {
-                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-                    contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
-                }, completion: { _ in
-                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                })
+//                UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+//                    contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
+//                }, completion: { _ in
+//                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+//                })
+
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         @unknown default:
             break
