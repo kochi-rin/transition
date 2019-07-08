@@ -91,42 +91,37 @@
             <point key="canvasLocation" x="1710.144927536232" y="138.61607142857142"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="E7g-oc-Nv3">
+        <scene sceneID="dam-cA-718">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" modalPresentationStyle="overCurrentContext" id="lbQ-xa-dpW" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="duf-aJ-Env" customClass="DetailViewController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sID-Aj-wqG"/>
-                        <viewControllerLayoutGuide type="bottom" id="hpH-HO-WOA"/>
+                        <viewControllerLayoutGuide type="top" id="g1z-jb-YeB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tqe-pP-05M"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="604-n2-Vob">
+                    <view key="view" contentMode="scaleToFill" id="NUm-ip-EsA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-ry-32Y">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-qU-9rz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="9zI-ry-32Y" firstAttribute="top" secondItem="604-n2-Vob" secondAttribute="top" id="Gs2-So-gad"/>
-                            <constraint firstAttribute="bottom" secondItem="9zI-ry-32Y" secondAttribute="bottom" id="aV7-53-aj9"/>
-                            <constraint firstItem="9zI-ry-32Y" firstAttribute="leading" secondItem="604-n2-Vob" secondAttribute="leading" id="iHT-Nt-eXh"/>
-                            <constraint firstItem="9zI-ry-32Y" firstAttribute="trailing" secondItem="604-n2-Vob" secondAttribute="trailing" id="kle-dn-a3b"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="9zI-ry-32Y" id="Dwm-Si-44I"/>
+                        <outlet property="tableView" destination="XjP-qU-9rz" id="P1N-AN-0vU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sxh-3Q-b6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeU-Bb-GoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826.0869565217395" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2560.8695652173915" y="104.46428571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zYS-qC-tbK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ru9-oJ-esU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ru9-oJ-esU" customClass="NavigationController" customModule="transition" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tgm-4M-JaM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
