@@ -10,7 +10,7 @@ import UIKit
 
 protocol CoverVerticalWithFadeByPushAnimatorProtocol: NSObjectProtocol {
     var animateBackgroundView: UIView? { get }
-    var animateContentView: UIView? { get }
+    var animateView: UIView? { get }
 }
 
 class CoverVerticalWithFadeByPushAnimator: NSObject {
@@ -44,7 +44,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
         case .push:
             if let animator = toVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
                 let backgroundView = animator.animateBackgroundView,
-                let contentView = animator.animateContentView {
+                let contentView = animator.animateView {
                 // insert capture of fromVC's view to toVC to pretense over current context
                 backgroundView.insertSubview(UIImageView(image: fromVC.view.capture()), at: 0)
 
@@ -57,7 +57,7 @@ class CoverVerticalWithFadeByPushAnimator: NSObject {
             }
         case .pop:
             if let animator = fromVC as? CoverVerticalWithFadeByPushAnimatorProtocol,
-                let contentView = animator.animateContentView {
+                let contentView = animator.animateView {
                 UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
                     contentView.transform = CGAffineTransform(translationX: 0, y: transitionContext.containerView.bounds.height - contentView.frame.minY)
                 }, completion: { _ in

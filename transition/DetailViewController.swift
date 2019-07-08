@@ -44,7 +44,7 @@ extension DetailViewController: CoverVerticalWithFadeByPushAnimatorProtocol {
         return view
     }
 
-    var animateContentView: UIView? {
+    var animateView: UIView? {
         return contentView
     }
 }
