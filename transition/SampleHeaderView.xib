@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWO-7B-Xss">
-                    <rect key="frame" x="16" y="15" width="30" height="30"/>
+                    <rect key="frame" x="368" y="15" width="30" height="30"/>
                     <state key="normal" title="×"/>
                     <connections>
                         <action selector="tappedClose:" destination="-1" eventType="touchUpInside" id="n6R-Xo-bcv"/>
@@ -36,10 +36,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sWO-7B-Xss" secondAttribute="trailing" constant="16" id="ARI-8X-GZJ"/>
                 <constraint firstItem="8CY-Ub-hVa" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="FWD-KP-6vc"/>
-                <constraint firstItem="sWO-7B-Xss" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Na7-ps-vNm"/>
+                <constraint firstItem="sWO-7B-Xss" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Vsz-ws-ElX"/>
                 <constraint firstItem="8CY-Ub-hVa" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="jxN-WJ-eAo"/>
-                <constraint firstItem="sWO-7B-Xss" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="uYK-qh-m2A"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

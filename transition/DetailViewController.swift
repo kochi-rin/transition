@@ -55,7 +55,7 @@ extension DetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 200, height: 50)))
+        let view = SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: tableView.frame.size.width, height: 50)))
         view.didTouchUpInside = { button in
             self.tappedClose(button)
         }
