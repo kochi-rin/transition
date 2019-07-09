@@ -23,8 +23,7 @@ class DetailViewController: UIViewController {
         imageView.image = image
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
 
-        tableView.contentInset.top = 500
-//        tableView.contentInset.bottom = UIApplication.shared.statusBarFrame.height + view.safeAreaInsets.bottom
+        tableView.contentInset.top = 400
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -65,9 +64,10 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < -100 {
-            print(min(500, abs(scrollView.contentOffset.y)))
-            tableView.contentInset.top = min(500, abs(scrollView.contentOffset.y))
+        if scrollView.contentOffset.y <= 0 {
+            tableView.contentInset.top = min(400, abs(scrollView.contentOffset.y))
+        } else {
+            tableView.contentInset.top = 0
         }
     }
 }
