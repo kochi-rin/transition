@@ -103,10 +103,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z2A-cf-0uw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="qIG-p7-fzI"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-qU-9rz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" id="EKK-2S-NML">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -124,8 +130,14 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z2A-cf-0uw" firstAttribute="leading" secondItem="NUm-ip-EsA" secondAttribute="leading" id="Sm4-h2-RDj"/>
+                            <constraint firstAttribute="trailing" secondItem="Z2A-cf-0uw" secondAttribute="trailing" id="aoZ-ZK-GuT"/>
+                            <constraint firstItem="Z2A-cf-0uw" firstAttribute="top" secondItem="NUm-ip-EsA" secondAttribute="top" id="eYO-ZF-H9C"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Z2A-cf-0uw" id="VRU-wt-spj"/>
                         <outlet property="tableView" destination="XjP-qU-9rz" id="P1N-AN-0vU"/>
                     </connections>
                 </viewController>

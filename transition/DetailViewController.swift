@@ -11,8 +11,8 @@ import UIKit
 class DetailViewController: UIViewController {
 
     var image: UIImage?
-    var imageView: UIImageView!
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -20,12 +20,9 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: -500), size: CGSize(width: UIScreen.main.bounds.size.width, height: 500)))
-        imageView.contentMode = .scaleAspectFill
         imageView.image = image
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
 
-        tableView.addSubview(imageView)
         tableView.contentInset.top = 500
 //        tableView.contentInset.bottom = UIApplication.shared.statusBarFrame.height + view.safeAreaInsets.bottom
     }
@@ -63,6 +60,15 @@ extension DetailViewController: UITableViewDelegate {
             self.tappedClose(button)
         }
         return view
+    }
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < -100 {
+            print(min(500, abs(scrollView.contentOffset.y)))
+            tableView.contentInset.top = min(500, abs(scrollView.contentOffset.y))
+        }
     }
 }
 
