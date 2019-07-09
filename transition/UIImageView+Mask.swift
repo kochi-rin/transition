@@ -39,4 +39,10 @@ extension UIImageView {
             }
         }
     }
+
+    func deleteMask() {
+        subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+    }
 }

@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
     }
 
     func tappedClose(_ sender: Any) {
-        imageView.image = image
+        imageView.deleteMask()
         tableView.isHidden = true
         navigationController?.popViewController(animated: true)
     }
