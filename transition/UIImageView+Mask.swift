@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 extension UIImageView {
     struct maskDefaut {
@@ -18,8 +19,10 @@ extension UIImageView {
             return
         }
 
+        let imageRect = AVMakeRect(aspectRatio:image.size, insideRect:bounds)
+
         DispatchQueue.global(qos: .userInteractive).async {
-            let maskedImage = image.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius)
+            let maskedImage = image.maskWithColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5))?.transparent(rect: rect, radius: maskDefaut.radius * (imageRect.size.width / image.size.width))
 
             DispatchQueue.main.async {
                 let maskedImageView = UIImageView(image: maskedImage)
