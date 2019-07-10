@@ -11,7 +11,7 @@ import AVKit
 
 extension UIImageView {
     struct maskDefaut {
-        static let radius: CGFloat = 5.0
+        static let radius: CGFloat = 20.0
     }
 
     func addMask(rect: CGRect) {
