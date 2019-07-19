@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="height" constant="500" id="qIG-p7-fzI"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-qU-9rz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-qU-9rz" customClass="TableView" customModule="transition" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="414" height="796"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -141,7 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Z2A-cf-0uw" id="VRU-wt-spj"/>
-                        <outlet property="tableView" destination="XjP-qU-9rz" id="P1N-AN-0vU"/>
+                        <outlet property="tableView" destination="XjP-qU-9rz" id="eUT-WD-F5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeU-Bb-GoX" userLabel="First Responder" sceneMemberID="firstResponder"/>

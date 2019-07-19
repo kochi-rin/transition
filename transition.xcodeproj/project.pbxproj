@@ -21,6 +21,7 @@
 		1C66403922B897FC00880AD6 /* UIImage+Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66403722B897FC00880AD6 /* UIImage+Mask.swift */; };
 		1C66403A22B897FC00880AD6 /* UIImageView+Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66403822B897FC00880AD6 /* UIImageView+Mask.swift */; };
 		1C66403C22B8981500880AD6 /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C66403B22B8981400880AD6 /* origin.png */; };
+		1CF1E46822E191F8006C7485 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1E46722E191F8006C7485 /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		1C66403722B897FC00880AD6 /* UIImage+Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Mask.swift"; sourceTree = "<group>"; };
 		1C66403822B897FC00880AD6 /* UIImageView+Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Mask.swift"; sourceTree = "<group>"; };
 		1C66403B22B8981400880AD6 /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
+		1CF1E46722E191F8006C7485 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				1C66403822B897FC00880AD6 /* UIImageView+Mask.swift */,
 				1C66403B22B8981400880AD6 /* origin.png */,
 				1C3465EF22B8D49B00923638 /* UIView+Extension.swift */,
+				1CF1E46722E191F8006C7485 /* TableView.swift */,
 			);
 			path = transition;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C66403222B88B1000880AD6 /* MasterViewController.swift in Sources */,
+				1CF1E46822E191F8006C7485 /* TableView.swift in Sources */,
 				1C66403422B88B2100880AD6 /* DetailViewController.swift in Sources */,
 				1C3465F022B8D49B00923638 /* UIView+Extension.swift in Sources */,
 				1C247C9922D319160096EDA3 /* SampleHeaderView.swift in Sources */,

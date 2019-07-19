@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     var image: UIImage?
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: TableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
