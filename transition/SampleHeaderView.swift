@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SampleHeaderView: UIView {
+class SampleHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var closeButton: UIButton!
 

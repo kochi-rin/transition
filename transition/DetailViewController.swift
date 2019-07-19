@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     var image: UIImage?
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var tableView: TableView!
+    @IBOutlet weak var collecitonView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,9 @@ class DetailViewController: UIViewController {
         imageView.image = image
         imageView.addMask(rect: CGRect(origin: CGPoint(x: 100, y: 200), size: CGSize(width: 300, height: 300)))
 
-        tableView.contentInset.top = 400
+        collecitonView.contentInset.top = 400
+        guard let fl = collecitonView?.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        fl.sectionHeadersPinToVisibleBounds = true
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -32,44 +34,40 @@ class DetailViewController: UIViewController {
 
     func tappedClose(_ sender: Any) {
         imageView.deleteMask()
-        tableView.isHidden = true
+        collecitonView.isHidden = true
         navigationController?.popViewController(animated: true)
     }
 }
 
-extension DetailViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SampleCell", for: indexPath)
-        cell.textLabel?.text = "Item\(indexPath.row)"
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         return cell
     }
-}
 
-extension DetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = SampleHeaderView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: tableView.frame.size.width, height: 50)))
-        view.didTouchUpInside = { button in
-            self.tappedClose(button)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as? SampleHeaderView else {
+            fatalError("Could not find proper header")
         }
-        return view
+
+        if kind == UICollectionView.elementKindSectionHeader {
+            return header
+        }
+
+        return UICollectionReusableView()
     }
 }
 
 extension DetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
-            tableView.contentInset.top = min(400, abs(scrollView.contentOffset.y))
+            collecitonView.contentInset.top = min(400, abs(scrollView.contentOffset.y))
         } else {
-            tableView.contentInset.top = 0
+            collecitonView.contentInset.top = 0
         }
     }
 }
